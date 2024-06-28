@@ -1,0 +1,82 @@
+{% extends 'SHOP/BASIC.HTML' %}
+
+
+{% block title %} ABOUT US {% endblock %}
+{% block body %} 
+<main role="main">
+
+  
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">MY CART</h1>
+        <p>MY CART  PVT LTD. IS AN INDIAN ELECTRONIC COMMERCE COMPANY BASED IN BENGALORE. FONDED BY SAJAL GUPTA IN 2018 THE COMPANY INITIALLY FOCUSED ON ELECTRONICS SALES MY CART HELD A 39.5% MARKET SHARE OF INDIA ECOMMERCE INDUSTRY.</p> 
+  
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">LEARN MORE »</a></p>
+      </div>
+    </div>
+  
+    <div class="container">
+     
+      <div class="row">
+        <div class="col-md-4">
+          <h2>HEADING</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-secondary" href="#" role="button">VIEW DETAILS »</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>HEADING</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-secondary" href="#" role="button">VIEW DETAILS »</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>HEADING</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-secondary" href="#" role="button">VIEW DETAILS »</a></p>
+        </div>
+      </div>
+  
+      <hr>
+  
+    </div> <!-- /CONTAINER -->
+  
+  </main>
+{% endblock %} 
+
+
+{% block js %}
+
+<script>
+    console.log('WORKING');
+    if(localStorage.getItem('CART')==null)
+    {
+      var CART = {};
+    }
+    else
+    {
+      CART = JSON.parse(localStorage.getItem('CART'));
+      document.getElementById('CART').innerHTML = Object.keys(CART).length;
+    }
+  
+    $('.CART').click(function(){
+      console.log('CLICKED')
+      var ID_STR = this.id.toString();
+      console.log(ID_STR);
+      if(CART[ID_STR] != undefined)
+      {
+        CART[ID_STR] = CART[ID_STR] + 1;  
+  
+      }
+      else
+      {
+        CART[ID_STR] = 1;
+  
+      }
+      console.log(CART);
+      localStorage.setItem('CART' , JSON.stringify(CART))
+      document.getElementById('CART').innerHTML = Object.keys(CART).length;
+    });
+    $('#POPCART').popover()
+    document.getElementById("POPCART").setAttribute('data-content','<h5>CART FOR YOUR ITEMS IN MY SHOPPING</h5>');
+  
+  </script>
+{% endblock %}

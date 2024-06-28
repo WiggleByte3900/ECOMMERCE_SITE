@@ -1,0 +1,70 @@
+{% extends 'SHOP/BASIC.HTML' %}
+
+
+{% block title %} CHECKOUT {% endblock %}
+{% block body %} 
+<div class="container">
+    <div class="col my-4">
+        <h2>STEP - 1 - MY CART EXPRESS CHECKOUT - REVIEW YOUR CART ITEMS </h2>
+        <div id="items">
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    ITEMS
+                    <span class="badge badge-primary badge-pill">14</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    ITEMS
+                    <span class="badge badge-primary badge-pill">2</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                ITEMS
+                    <span class="badge badge-primary badge-pill">1</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col my-4">
+        <h2>STEP - 2 - ENTER ADDRESS AND OTHER DETAILS:</h2>
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="INPUTNAME">NAME</label>
+                    <input type="name" class="form-control" id="INPUTNAME" placeholder="NAME">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="INPUTEMAIL14">EMAIL</label>
+                    <input type="email" class="form-control" id="INPUTEMAIL" placeholder="EMAIL">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="INPUTADDRESS">ADDRESS</label>
+                <input type="text" class="form-control" id="INPUTADDRESS" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="INPUTADDRESS2">ADDRESS LINE 2</label>
+                <input type="text" class="form-control" id="INPUTADDRESS2" placeholder="">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="INPUT CITY">CITY</label>
+                    <input type="text" class="form-control" id="INPUTCITY">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="INPUTSTATE">STATE</label>
+                    <input type="text" class="form-control" id="INPUTADDRESS2" placeholder="ENTER STATE">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="INPUTZIP">ZIP</label>
+                    <input type="text" class="form-control" id="INPUTZIP">
+                </div>
+            </div>
+            <div class="form-group">
+                    <label for="INPUTZIP">PHONE NUMBER</label>
+                    <input type="tel" class="form-control" id="INPUTPHONE">
+                </div>
+            <button type="submit" class="btn btn-primary">PLACE ORDER</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
